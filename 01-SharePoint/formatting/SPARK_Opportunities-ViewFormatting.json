@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/view-formatting.schema.json",
+  "hideSelection": true,
+  "hideListHeader": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "attributes": {
+      "class": "spark-card"
+    },
+    "style": {
+      "display": "flex",
+      "flex-direction": "column",
+      "border-radius": "16px",
+      "padding": "20px 22px",
+      "margin-bottom": "14px",
+      "background": "linear-gradient(145deg, rgba(255,255,255,0.65), rgba(255,255,255,0.35))",
+      "backdrop-filter": "blur(14px)",
+      "border": "1px solid rgba(255,255,255,0.5)",
+      "box-shadow": "0 4px 16px rgba(15,23,42,0.08)",
+      "transition": "transform 0.18s ease, box-shadow 0.18s ease",
+      "cursor": "pointer"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "display": "flex",
+          "justify-content": "space-between",
+          "align-items": "center",
+          "margin-bottom": "10px"
+        },
+        "children": [
+          {
+            "elmType": "span",
+            "txtContent": "[$Domain]",
+            "style": {
+              "font-size": "11px",
+              "font-weight": "700",
+              "letter-spacing": "0.04em",
+              "text-transform": "uppercase",
+              "padding": "4px 10px",
+              "border-radius": "999px",
+              "color": "#ffffff",
+              "background-color": "=if(@currentField == 'AI/ML', '#7C3AED', if(@currentField == 'Cloud', '#0EA5E9', if(@currentField == 'Data', '#059669', if(@currentField == 'Frontend', '#F59E0B', if(@currentField == 'Backend', '#DC2626', if(@currentField == 'DevOps', '#334155', '#DB2777'))))))"
+            }
+          },
+          {
+            "elmType": "span",
+            "txtContent": "[$Status]",
+            "style": {
+              "font-size": "11px",
+              "font-weight": "600",
+              "padding": "4px 10px",
+              "border-radius": "999px",
+              "color": "=if([$Status] == 'Open', '#065F46', '#7F1D1D')",
+              "background-color": "=if([$Status] == 'Open', '#D1FAE5', '#FEE2E2')"
+            }
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "txtContent": "[$Title]",
+        "style": {
+          "font-size": "17px",
+          "font-weight": "700",
+          "color": "#0F172A",
+          "margin-bottom": "6px"
+        }
+      },
+      {
+        "elmType": "div",
+        "txtContent": "[$TechStack]",
+        "style": {
+          "font-size": "12.5px",
+          "color": "#475569",
+          "margin-bottom": "12px"
+        }
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "display": "flex",
+          "justify-content": "space-between",
+          "align-items": "center",
+          "border-top": "1px solid rgba(15,23,42,0.08)",
+          "padding-top": "10px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "align-items": "center",
+              "gap": "6px"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "txtContent": "Mentor:",
+                "style": {
+                  "font-size": "11px",
+                  "color": "#94A3B8",
+                  "font-weight": "600"
+                }
+              },
+              {
+                "elmType": "span",
+                "txtContent": "[$MentorName.title]",
+                "style": {
+                  "font-size": "12.5px",
+                  "color": "#334155",
+                  "font-weight": "600"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "span",
+            "txtContent": "=[$Openings] + ' openings'",
+            "style": {
+              "font-size": "12px",
+              "font-weight": "700",
+              "color": "#1D4ED8"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
